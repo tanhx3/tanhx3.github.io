@@ -1,7 +1,6 @@
-# tanhx.github.io
+# tanhx3.github.io
 
-Personal English homepage for Haoxian Tan — Researcher at Meituan Inc.
-Published via GitHub Pages at https://tanhx.github.io
+Published via GitHub Pages at https://tanhx3.github.io
 
 ## Structure
 
@@ -17,10 +16,6 @@ replace the `TODO_*` placeholders inside the `pub-links` div:
 <a href="TODO_ARXIV_OR_PDF" target="_blank" rel="noopener">Paper</a>
 <a href="TODO_CODE_REPO" target="_blank" rel="noopener">Code</a>
 ```
-
-### Verified links
-- LaSagnA → https://arxiv.org/abs/2404.08506 (confirmed)
-- All other paper/code links are placeholders (`TODO_*`) to be filled in.
 
 ### Add social links
 In the hero `<nav class="hero-contact">`, uncomment and fill the Scholar/GitHub/X links.
