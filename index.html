@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haoxian Tan — Researcher</title>
+<meta name="description" content="Haoxian Tan, Researcher at Meituan Inc. Working on large multimodal models, diffusion models, and AI design agents for image generation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f13;
+    --bg-soft: #15171d;
+    --surface: #1a1d24;
+    --border: #262a33;
+    --text: #e8e9ed;
+    --text-soft: #a7adb8;
+    --text-dim: #6b7280;
+    --accent: #d4a373;
+    --accent-soft: rgba(212, 163, 115, 0.12);
+    --accent-line: rgba(212, 163, 115, 0.35);
+    --max: 880px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212, 163, 115, 0.06), transparent);
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    padding: 96px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .hero-text { flex: 1; min-width: 0; }
+
+  .avatar {
+    flex-shrink: 0;
+    width: 185px;
+    height: 185px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 0 1px var(--accent-line), 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: var(--bg-soft);
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 7vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+
+  .hero-role {
+    font-size: 19px;
+    color: var(--text-soft);
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
+  .hero-role a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-line);
+    transition: border-color 0.2s;
+  }
+  .hero-role a:hover { border-bottom-color: var(--accent); }
+
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 22px;
+    font-size: 14px;
+  }
+
+  .hero-contact a {
+    color: var(--text-soft);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: color 0.2s;
+  }
+  .hero-contact a:hover { color: var(--accent); }
+  .hero-contact a svg { width: 15px; height: 15px; opacity: 0.8; }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ---------- About ---------- */
+  .about p {
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+  .about p:last-child { margin-bottom: 0; }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .tag {
+    font-size: 13px;
+    color: var(--text-soft);
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-soft);
+  }
+
+  /* ---------- Publications ---------- */
+  .year-group { margin-bottom: 48px; }
+  .year-group:last-child { margin-bottom: 0; }
+
+  .year-heading {
+    font-family: 'Newsreader', serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pub {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub:last-child { border-bottom: none; }
+
+  .pub-head {
+    margin-bottom: 8px;
+  }
+
+  .pub-venue {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+
+  .pub-title {
+    font-family: 'Newsreader', serif;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--text);
+    margin: 4px 0 10px;
+    letter-spacing: -0.005em;
+  }
+
+  .pub-authors {
+    font-size: 14.5px;
+    color: var(--text-soft);
+    margin-bottom: 12px;
+  }
+  .pub-authors .me {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+  }
+
+  .pub-summary {
+    font-size: 14.5px;
+    color: var(--text-soft);
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent-line);
+    line-height: 1.6;
+  }
+
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 13.5px;
+  }
+  .pub-links a {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .pub-links a:hover { border-bottom-color: var(--accent); }
+  .pub-links a.placeholder {
+    color: var(--text-dim);
+    border: 1px dashed var(--border);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-style: italic;
+    cursor: default;
+  }
+  .pub-links a.placeholder:hover { border-bottom: 1px dashed var(--border); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 40px 0 64px;
+    color: var(--text-dim);
+    font-size: 13.5px;
+  }
+  footer .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 600px) {
+    header.hero { padding: 64px 0 40px; }
+    .hero-inner { flex-direction: column-reverse; align-items: flex-start; gap: 28px; }
+    .avatar { width: 146px; height: 146px; }
+    section { padding: 48px 0; }
+    .pub-head { flex-direction: column; gap: 4px; }
+    .pub-year { min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Researcher · Multimodal</div>
+        <h1>Haoxian Tan</h1>
+        <p class="hero-role">Researcher at <a href="https://about.meituan.com/" target="_blank" rel="noopener">Meituan Inc.</a></p>
+        <nav class="hero-contact">
+          <a href="mailto:tanhx3@hotmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            tanhx3@hotmail.com
+          </a>
+          <a href="#publications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Publications
+          </a>
+          <!-- TODO: add Scholar / GitHub / X links here, e.g. -->
+          <!-- <a href="SCHOLAR_URL" target="_blank" rel="noopener">Scholar</a> -->
+          <!-- <a href="GITHUB_URL" target="_blank" rel="noopener">GitHub</a> -->
+        </nav>
+      </div>
+      <img src="avatar.jpg" alt="Haoxian Tan" class="avatar" width="185" height="185" loading="eager">
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label">About</div>
+    <p>
+      I am a researcher at <a href="https://about.meituan.com/" target="_blank" rel="noopener" style="color:var(--text);border-bottom:1px solid var(--accent-line);text-decoration:none">Meituan Inc.</a>,
+      where I work on large multimodal models, diffusion models, and AI design agents.
+    </p>
+    <p>
+      My research is particularly focused on building <em>commercial image generation
+      systems</em> &mdash; spanning the full stack from <strong>data</strong> curation,
+      <strong>training</strong> of large-scale generative models, to rigorous
+      <strong>evaluation</strong> of generation quality.
+    </p>
+    <p>
+      Previously, my work mainly explored the application of multimodal large language models
+      to fine-grained visual perception &mdash; including language-guided segmentation, multi-granular
+      visual understanding, and self-reflection frameworks for multimodal understanding and generation.
+    </p>
+    <div class="tags">
+      <span class="tag">Large Multimodal Models</span>
+      <span class="tag">Diffusion Models</span>
+      <span class="tag">AI Design Agents</span>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="container">
+    <div class="section-label">Publications</div>
+
+    <!-- ============ 2026 ============ -->
+    <div class="year-group">
+      <h2 class="year-heading">2026</h2>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">ECCV 2026</span>
+        </div>
+        <h3 class="pub-title">UniReflect: Self-Reflection Tuning for Unified Multimodal Understanding and Generation</h3>
+        <p class="pub-authors">
+          Cong Wei, Zepeng Huang, <span class="me">Haoxian Tan</span>, Liang Da Shuang, Lishuai Gao, Pengfei Yan, Xiaoming Wei
+        </p>
+        <p class="pub-summary">
+          A self-reflection tuning framework that unifies multimodal understanding and generation by letting models iteratively critique and correct their own outputs.
+        </p>
+        <!-- <div class="pub-links">
+          <a href="TODO_ARXIV_OR_PDF" target="_blank" rel="noopener">pdf</a>
+          <a href="TODO_CODE_REPO" target="_blank" rel="noopener">code</a>
+        </div> -->
+      </article>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">ACM MM 2026</span>
+        </div>
+        <h3 class="pub-title">APT: Alignment-Preserving Video Tokenizer for Non-Destructive Image-to-Video Adaptation</h3>
+        <p class="pub-authors">
+          Lishuai Gao, Yujie Zhong, Yifan Li, <span class="me">Haoxian Tan</span>, Jie Hu, Zhuoliang Kang, Zan Gao, Xiaoming Wei
+        </p>
+        <p class="pub-summary">
+          A video tokenizer that preserves image&ndash;video alignment, enabling image-to-video adaptation without degrading the original image generation capability.
+        </p>
+        <!-- <div class="pub-links">
+          <a href="TODO_ARXIV_OR_PDF" target="_blank" rel="noopener">pdf</a>
+          <a href="TODO_CODE_REPO" target="_blank" rel="noopener">code</a>
+        </div> -->
+      </article>
+    </div>
+
+    <!-- ============ 2025 ============ -->
+    <div class="year-group">
+      <h2 class="year-heading">2025</h2>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">arXiv preprint</span>
+        </div>
+        <h3 class="pub-title">LongCat-Image</h3>
+        <p class="pub-authors">
+          <span class="me">Haoxian Tan</span>, et al. (Meituan LongCat Team)
+        </p>
+        <p class="pub-summary">
+          A commercial-grade image generation system from Meituan, covering the full stack of data curation, large-scale training, and evaluation.
+        </p>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2512.07584" target="_blank" rel="noopener">pdf</a>
+          <a href="https://github.com/meituan-longcat/LongCat-Image" target="_blank" rel="noopener">code</a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">CVPR 2025</span>
+        </div>
+        <h3 class="pub-title">HyperSeg: Hybrid Segmentation Assistant with Fine-Grained Visual Perceiver</h3>
+        <p class="pub-authors">
+          Cong Wei, Yujie Zhong, <span class="me">Haoxian Tan</span>, Yong Liu, Jie Hu, Dengjie Li, Zheng Zhao, Yujiu Yang
+        </p>
+        <p class="pub-summary">
+          An MLLM that extends multimodal large language models beyond image-level tasks to fine-grained segmentation via a hybrid perceiver architecture.
+        </p>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Wei_HyperSeg_Hybrid_Segmentation_Assistant_with_Fine-grained_Visual_Perceiver_CVPR_2025_paper.pdf" target="_blank" rel="noopener">pdf</a>
+          <a href="https://github.com/congvvc/HyperSeg" target="_blank" rel="noopener">code</a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">ICCV 2025</span>
+        </div>
+        <h3 class="pub-title">InstructSeg: Unifying Instructed Visual Segmentation with Multi-Modal Large Language Models</h3>
+        <p class="pub-authors">
+          Cong Wei, Yujie Zhong, <span class="me">Haoxian Tan</span>, Yingsen Zeng, Yong Liu, Hongfa Wang, Yujiu Yang
+        </p>
+        <p class="pub-summary">
+          An end-to-end MLLM that unifies referring, reasoning, and interactive segmentation under a single instruction-following framework.
+        </p>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Wei_InstructSeg_Unifying_Instructed_Visual_Segmentation_with_Multi-modal_Large_Language_Models_ICCV_2025_paper.pdf" target="_blank" rel="noopener">pdf</a>
+          <a href="https://github.com/congvvc/InstructSeg" target="_blank" rel="noopener">code</a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">ICCV 2025</span>
+        </div>
+        <h3 class="pub-title">Advancing Visual Large Language Model for Multi-Granular Versatile Perception</h3>
+        <p class="pub-authors">
+          Wentao Xiang, <span class="me">Haoxian Tan</span>, Yujie Zhong, Cong Wei, Dengjie Li, Yujiu Yang
+        </p>
+        <p class="pub-summary">
+          A plug-and-play multi-granular visual adapter enabling LVLMs to perceive visual features simultaneously at pixel, patch, and instance levels.
+        </p>
+        <div class="pub-links">
+          <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Xiang_Advancing_Visual_Large_Language_Model_for_Multi-granular_Versatile_Perception_ICCV_2025_paper.pdf" target="_blank" rel="noopener">pdf</a>
+          <a href="https://github.com/xiangwentao666/MVP-LM" target="_blank" rel="noopener">code</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============ 2024 ============ -->
+    <div class="year-group">
+      <h2 class="year-heading">2024</h2>
+
+      <article class="pub">
+        <div class="pub-head">
+          <span class="pub-venue">arXiv preprint</span>
+        </div>
+        <h3 class="pub-title">LaSagnA: Language-based Segmentation Assistant for Complex Queries</h3>
+        <p class="pub-authors">
+          Cong Wei, <span class="me">Haoxian Tan</span>, Yujie Zhong, Yujiu Yang, Lin Ma
+        </p>
+        <p class="pub-summary">
+          A segmentation architecture that excels at complex queries, using a query-aware feature enhancer and multi-scale cross-attention to refine visual features with query-specific information.
+        </p>
+        <div class="pub-links">
+          <a href="https://arxiv.org/pdf/2404.08506" target="_blank" rel="noopener">pdf</a>
+          <a href="https://github.com/congvvc/LaSagnA" target="_blank" rel="noopener">code</a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>&copy; <span id="year">2026</span> Haoxian Tan</span>
+    <span>Last updated: July 2026</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
